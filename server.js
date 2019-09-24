@@ -23,8 +23,31 @@ if (message === 'ville'){
    }
 
 })
+
+
+app.get('/hell', (req, res) => {
+
+    const coutry = req.query
+
+    res.send('hello'+req.query.nom)
+    
+    console.log('hello',typeof req.query, req.query.nom)
+})
+
+app.get('/hi', (req, res) => {
+
+    const country = req.query
+console.log('hello', typeof req.query, req.query)
+    if (country === null)
+     {
+        res.send('Which country?')
+     }
+    else
+     {
+        res.send('hello, '+req.query.country +'!')
+     }  
+})
 app.listen(port, function () {
   console.log('Example app listening on port ${port}!')
 })
-
 
